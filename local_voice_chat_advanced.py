@@ -17,7 +17,7 @@ from ollama import chat
 # tts_model = get_tts_model()  # kokoro
 
 # Option 2: Specify a different TTS model
-# tts_model = get_tts_model(model_name="google_tts")  # Google TTS
+# tts_model = get_tts_model(model_name="google_tts") 
 
 # Option 3: Use a custom TTS model
 # tts_model = get_tts_model(model_name="custom_tts_model")  # Replace with your custom model name
@@ -38,7 +38,6 @@ def echo(audio):
     logger.debug(f"🎤 Transcript: {transcript}")
     response = chat(
         model="gemma3:4b-it-qat",
-        #model-"gemma3:4b",
         messages=[
             {
                 "role": "system",
@@ -49,7 +48,7 @@ def echo(audio):
         options={"num_predict": 200},
     )
     response_text = response["message"]["content"]
-    logger.debug(f"🤖 Response: {response_text}")
+    logger.debug(f" Response: {response_text}")
     for audio_chunk in tts_model.stream_tts_sync(response_text):
         yield audio_chunk
 
