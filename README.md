@@ -51,16 +51,8 @@ ollama pull gemma3:4b
 
 ## Usage
 
-### Basic Voice Chat
-
 ```bash
 python local_voice_chat.py
-```
-
-### Advanced Voice Chat (with system prompt)
-
-#### Web UI (default)
-```bash
 python local_voice_chat_advanced.py
 ```
 
@@ -69,8 +61,6 @@ Get a temporary phone number that anyone can call to interact with your AI:
 ```bash
 python local_voice_chat_advanced.py --phone
 ```
-
-This will provide you with a temporary phone number that you can call to interact with the AI using your voice.
 
 ## How it works
 
